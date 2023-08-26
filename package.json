@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:4000",
   "name": "language_puzzles",
   "version": "0.1.0",
   "private": true,
@@ -8,8 +9,13 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
+    "sass": "^1.64.2",
     "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^your.preferred.version"
   },
   "scripts": {
     "start": "react-scripts start",

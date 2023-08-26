@@ -1,0 +1,145 @@
+@import '../../assets/colorList.scss';
+
+.things_parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid green;
+    width: 600px;
+    margin: 127px auto;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.things_parent .header {
+    margin-bottom: 20px;
+}
+
+.things_parent .header span {
+    font-style: bold;
+}
+
+.things_parent .back {
+    left: -30px;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    border: 1px solid $customGreen;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.cell:hover {
+    cursor: pointer;
+}
+
+.color_picker {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.red {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    box-shadow: 0 0px 0px 3px $customRed;
+    border-radius: 50%;
+}
+
+.yellow {
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    box-shadow: 0 0px 0px 3px $customYellow;
+    border-radius: 50%;
+}
+
+.green {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    box-shadow: 0 0px 0px 3px $customGreen;
+    border-radius: 50%;
+}
+
+.blue {
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    box-shadow: 0 0px 0px 3px $customBlue;
+    border-radius: 50%;
+}
+
+.header ul {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.header li {
+    text-decoration: none;
+}
+
+.found {
+    color: green;
+}
+
+.current {
+    color: $customGreen;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.score {
+    color: #007bff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 620px) {
+    .things_parent {
+        width: 550px;
+        padding: 20px 10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .things_parent {
+        width: 470px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .things_parent {
+        width: 350px;
+    }
+
+    .things_parent .cell {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .things_parent {
+        width: 280px;
+    }
+
+    .things_parent .cell {
+        width: 40px;
+        height: 40px;
+    }
+}

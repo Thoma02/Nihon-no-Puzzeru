@@ -1,0 +1,82 @@
+@import '../../assets/colorList.scss';
+
+.puzzle_grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    border: 2px solid green;
+    width: 90%;
+    margin: 164px auto;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom, #f7f7f7, #d0d0d0);
+}
+
+.puzzle_grid .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom, #6ea7ff, #3e80f7);
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    border: 1px solid #6ea7ff;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.puzzle_grid a {
+    text-decoration: none;
+}
+
+.puzzle_grid .cell:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cell.completed {
+    background-image: linear-gradient(to bottom, #4caf50, #2e7d32);
+    border: 1px solid #4caf50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+}
+
+.preview-image {
+    width: 250px;
+    height: 250px;
+}
+
+.sudoku_pages {
+    width: 90%;
+    background-image: linear-gradient(to bottom, #007bff, #0056b3);
+    color: #fff;
+    padding: 20px;
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+    border: 2px solid blue;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.3s ease-in-out;
+    max-width: 500px;
+}
+
+.sudoku_pages:hover {
+    cursor: pointer;
+    background-color: $customBlue;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sudoku_pages:active {
+    background-image: linear-gradient(to bottom, #0056b3, #007bff);
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-color: #007bff;
+}

@@ -1,0 +1,321 @@
+@import '../../assets/colorList.scss';
+
+nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #9be0ba, #74c799);
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #f7f7f7;
+    /* Lighter color on hover */
+}
+
+nav h1 {
+    display: inline;
+    font-size: 40px;
+}
+
+.user_container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 24px;
+    top: 77px;
+    right: -100%;
+    background-image: linear-gradient(to bottom, #f7f7f7, #d0d0d0);
+    padding: 15px 30px;
+    border-bottom-left-radius: 20px;
+    border-left: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    transition: right 0.5s ease-in-out;
+    z-index: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user_container.clicked {
+    right: 0;
+}
+
+.user_container a {
+    background-image: linear-gradient(to bottom, #007bff, #0056b3);
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 2px solid blue;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.user_container a:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user_container a:active {
+    background-image: linear-gradient(to bottom, #0056b3, #007bff);
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-color: #007bff;
+}
+
+.user_container_loged_out a {
+    transition: color 0.3s ease-in-out;
+}
+
+.user_container_loged_out a:hover {
+    color: $customLightGray;
+}
+
+.user_container_loged_out a:active {
+    color: #4caf50;
+}
+
+.login {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 164px auto;
+}
+
+.login h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.login label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.login button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: 900;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.login a {
+    text-decoration: none;
+}
+
+.login button:hover {
+    cursor: pointer;
+    background-color: $customBlue;
+    color: #000;
+}
+
+.login-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.error {
+    padding: 10px;
+    background: #ffefef;
+    border: 1px solid red;
+    color: red;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.logout {
+    color: #fff;
+    font-size: 22px;
+    background-image: linear-gradient(to bottom, #007bff, #0056b3);
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 2px solid blue;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.logout:hover {
+    cursor: pointer;
+    // background-color: #228dff;
+    color: $customLightGray;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.signup {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 164px auto;
+}
+
+.signup h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.signup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.signup input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.signup button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: 900;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.signup a {
+    text-decoration: none;
+}
+
+.signup button:hover {
+    cursor: pointer;
+    background-color: $customBlue;
+    color: #000;
+}
+
+.signup-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.burger_menu {
+    position: relative;
+    width: 50px;
+    height: 40px;
+}
+
+.burger_menu:hover {
+    cursor: pointer;
+}
+
+.line {
+    height: 7px;
+    position: absolute;
+    background-color: black;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    // background: linear-gradient(90deg, #C0B7E8 -15.79%, #8176AF 100%);
+    background-image: linear-gradient(to right, #007bff, #0056b3);
+    border-radius: 40px;
+}
+
+.top {
+    width: 50px;
+    top: 0;
+    right: 0;
+    margin-bottom: 8px;
+}
+
+.middle {
+    width: 25px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.bottom {
+    width: 50px;
+    bottom: 0;
+    right: 0;
+}
+
+.clicked .middle {
+    transform: translate(-50%, -50%) translateX(-5px);
+    opacity: 0;
+}
+
+.clicked .line {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.clicked .line.top {
+    transform: translateY(16px) rotate(-45deg);
+}
+
+.clicked .line.bottom {
+    transform: translateY(-16px) rotate(45deg);
+}
+
+.sudoku_pages.small {
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 640px) {
+    nav {
+        flex-direction: column;
+    }
+
+    // .logout {
+    //     // width: 280px;
+    // }
+
+    nav span {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    nav {
+        flex-direction: column;
+    }
+
+    // .logout {
+    //     // width: 280px;
+    // }
+
+    nav span {
+        font-size: 18px;
+    }
+}
+
