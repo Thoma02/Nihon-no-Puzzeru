@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Sudoku.scss";
 import completedSound from "../../assets/audio/mixkit-instant-win-2021.wav";
 import Congratulations from "../Congratulations/Congratulations";
+import { sudokuPuzzles } from "../../assets/info/gameLists";
 
 const Sudoku = (props) => {
+    const location = useLocation(); // Get the current location
+    const currentRouteIndex = sudokuPuzzles.indexOf(location.pathname);
+
     const [game, setGame] = useState(null);
     const [correctCount, setCorrectCount] = useState(0);
     const [isCompleted, setIsCompleted] = useState(false);
@@ -15,6 +19,27 @@ const Sudoku = (props) => {
     const {user} = useAuthContext();
     const bestScore = game ? game.bestScore : 0;
     const navigate = useNavigate();
+
+    const navigateTo = (index, direction) => {
+        let targetIndex;
+
+        if (direction === "previous") {
+            targetIndex = index === 0 ? sudokuPuzzles.length - 1 : index - 1;
+        } else if (direction === "next") {
+            targetIndex = index === sudokuPuzzles.length - 1 ? 0 : index + 1;
+        }
+
+        navigate(sudokuPuzzles[targetIndex]);
+        console.log("Navigating to:", sudokuPuzzles[targetIndex]);
+    };
+
+    const handlePrevious = () => {
+        navigateTo(currentRouteIndex, "previous");
+    };
+
+    const handleNext = () => {
+        navigateTo(currentRouteIndex, "next");
+    };
 
     useEffect(() => {
 
@@ -147,10 +172,32 @@ const Sudoku = (props) => {
     return (
         <div className={`color_sudoku_parent ${props.specificClass}`}>
             <div className="header">
-                <a className="back" href="/sudoku-puzzles">←Back</a>
+                {/* <a className="back" href="/sudoku-puzzles">←Back</a> */}
                 <h1>{props.title}</h1>
                 <p>{props.info}</p>
-                <p>{props.reference}</p>
+                {/* <p>{props.reference}</p> */}
+                <div className="reference">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Kanji</th>
+                                <th>Hiragana</th>
+                                <th>Romaji</th>
+                                <th>Translation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {props.reference.map((item, index) => (
+                                <tr key={index}>
+                                    <td>{item.kanji}</td>
+                                    <td>{item.hiragana}</td>
+                                    <td>{item.romaji}</td>
+                                    <td>{item.translation}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div className="color_sudoku">
                 {props.unfilledGrid.map((row, rowIndex) => (
@@ -169,7 +216,9 @@ const Sudoku = (props) => {
                                                 newAnswers[rowIndex][columnIndex] = e.target.value;
                                                 setUserAnswers(newAnswers);
                                         }}
-                                        style={{ color: colors[rowIndex][columnIndex] }}
+                                        style={{ 
+                                            color: colors[rowIndex][columnIndex], 
+                                        }}
                                     /> 
                                 ) : null}
                             </div>
@@ -183,9 +232,15 @@ const Sudoku = (props) => {
                 ) : (
                     <button onClick={compareAnswers}>Check</button>
                 )}
-                {resetComponent ? (
-                    <button onClick={() => {navigate('/')}}>Home</button>
-                ) : null}
+                <div className="navigate_games">
+                    <button onClick={handlePrevious}>Previous</button>
+                    <button className="games_grid_link" onClick={() => {navigate('/sudoku-puzzles')}}>
+                        <div className="white_line"></div>
+                        <div className="white_line"></div>
+                        <div className="white_line"></div>
+                    </button>
+                    <button onClick={handleNext}>Next</button>
+                </div>
             </div>
                 {resetComponent && !isCompleted ? 
                     <div className="score">
