@@ -33,6 +33,7 @@
     border: 1px solid $customGreen;
     padding: 20px;
     font-size: 18px;
+    user-select: none;
 }
 
 .cell:hover {

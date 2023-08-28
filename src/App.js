@@ -11,11 +11,14 @@ import WordSearchPage from './pages/WordSearchPage';
 import DragAndDropPage from './pages/DragAndDropPage';
 import MonthsPage from './pages/MonthsPage';
 import EverydayObjectsPage from './pages/EverydayObjectsPage';
+import Foods from './pages/Foods';
 import ColorSudokuPage from './pages/SudokuPuzzles/ColorSudokuPage';
 import DaysWeekPage from './pages/DaysWeekPage';
 import WeatherSudoku9x9 from './pages/SudokuPuzzles/WeatherSudoku9X9';
 import WeatherSudoku from './pages/SudokuPuzzles/WeatherSudoku';
 import AnimalSudoku from './pages/SudokuPuzzles/AnimalSudoku';
+import NumbersSudokuPage from './pages/SudokuPuzzles/Wanikani-1/Numbers';
+import BeginnerKanjiPage1 from './pages/SudokuPuzzles/Wanikani-1/BeginnerKanji-1';
 
 function App() {
 
@@ -58,6 +61,10 @@ function App() {
             element={<EverydayObjectsPage />}
           />
           <Route 
+            path='/word-search-puzzles/foods'
+            element={<Foods />}
+          />
+          <Route 
             path='/sudoku-puzzles/color-sudoku'
             element={<ColorSudokuPage />}
           />
@@ -70,12 +77,20 @@ function App() {
             element={<WeatherSudoku9x9 />}
           />
           <Route 
+            path='/sudoku-puzzles/numbers-sudoku'
+            element={<NumbersSudokuPage />}
+          />
+          <Route 
             path='/sudoku-puzzles/animal-sudoku'
             element={<AnimalSudoku />}
           />
           <Route 
             path='/sudoku-puzzles/weather-sudoku'
             element={<WeatherSudoku />}
+          />
+          <Route 
+            path='/sudoku-puzzles/beginner-kanji-1'
+            element={<BeginnerKanjiPage1 />}
           />
         </Routes>
       </BrowserRouter>

@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./DragAndDrop.scss";
 import completedSound from "../../assets/audio/mixkit-instant-win-2021.wav";
 import Congratulations from "../Congratulations/Congratulations";
+import { dragAndDropPuzzles } from "../../assets/info/gameLists";
 
 const DragAndDrop = (props) => {
+
+    const location = useLocation(); // Get the current location
+    const currentRouteIndex = dragAndDropPuzzles.indexOf(location.pathname);
 
     //Keeps track of the current game is document from the database for the specific user
     const [game, setGame] = useState(null);
@@ -36,6 +40,30 @@ const DragAndDrop = (props) => {
 
     //Makes use of the useNavigate hook
     const navigate = useNavigate()
+
+    const navigateTo = (index, direction) => {
+        let targetIndex;
+
+        if (direction === "previous") {
+            console.log(index === 0)
+            targetIndex = index === 0 ? dragAndDropPuzzles.length - 1 : index - 1;
+            console.log(targetIndex)
+        } else if (direction === "next") {
+            targetIndex = index === dragAndDropPuzzles.length - 1 ? 0 : index + 1;
+            console.log(targetIndex)
+        }
+
+        navigate(dragAndDropPuzzles[targetIndex]);
+        console.log("Navigating to:", dragAndDropPuzzles[targetIndex]);
+    };
+
+    const handlePrevious = () => {
+        navigateTo(currentRouteIndex, "previous");
+    };
+
+    const handleNext = () => {
+        navigateTo(currentRouteIndex, "next");
+    };
 
     //Updates game to be the current game being played if the games array is available (if there is a user)
     useEffect(() => {
@@ -222,9 +250,18 @@ const DragAndDrop = (props) => {
                 ) : (
                     <button onClick={handleClick}>Check</button>
                 )}
-                {check ? (
+                {/* {check ? (
                     <button onClick={() => {navigate('/')}}>Home</button>
-                ) : null}
+                ) : null} */}
+                <div className="navigate_games">
+                    <button onClick={handlePrevious}>Previous</button>
+                    <button className="games_grid_link" onClick={() => {navigate('/word-search-puzzles')}}>
+                        <div className="white_line"></div>
+                        <div className="white_line"></div>
+                        <div className="white_line"></div>
+                    </button>
+                    <button onClick={handleNext}>Next</button>
+                </div>
             </div>
             {isCompleted && (
                 <Congratulations />

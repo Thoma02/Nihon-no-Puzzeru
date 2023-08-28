@@ -39,7 +39,7 @@
 }
 
 .color_sudoku_parent textarea {
-    width: 98px;
+    width: 100px;
     height: 98px;
     text-align: center;
     line-height: 98px;
@@ -47,6 +47,29 @@
     padding: 0;
     border: none;
     resize: none;
+}
+
+.reference {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
 }
 
 .color_sudoku {
@@ -62,6 +85,36 @@
     top: 0px;
     left: 10px;
     color: $customGreen;
+}
+
+.navigate_games {
+    display: flex;
+    gap: 10px;
+
+    button {
+        font-size: 24px;
+        max-width: 120px;
+    }
+
+    .games_grid_link {
+        font-size: 70px;
+        max-width: 120px;
+        padding-bottom: 8px;
+    }
+}
+
+.games_grid_link {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 30px;
+    max-width: 120px;
+    padding-top: 5px;
+}
+
+.white_line {
+    width: 35px;
+    height: 10px;
+    background-color: #fff;
 }
 
 // .back:hover {

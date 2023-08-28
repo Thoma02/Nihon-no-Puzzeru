@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useSignup } from "../hooks/useSignup";
-import { useNavigate } from 'react-router-dom'
 import Navbar from "../components/Navbar/Navbar";
 import "../components/Navbar/Navbar.scss";
 
@@ -8,17 +7,11 @@ const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { signup, error, isLoading } = useSignup();
-    const navigate = useNavigate();
 
-    // console.log(error)
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         await signup(email, password);
-
-        if (!isLoading && error) {
-            navigate('/login');
-        }
     };
 
     return (

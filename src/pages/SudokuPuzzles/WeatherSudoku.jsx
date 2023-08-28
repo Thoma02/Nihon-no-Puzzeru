@@ -29,7 +29,14 @@ const WeatherSudoku = () => {
 
     const title = "Weather Sudoku";
     const info = "Below is a kanji sudoku where you need to fill the empty space with the right color";
-    const reference = "Refrence: weather - rain - 雨 (あめ/ame), snow - 雪 (ゆき/yuki), cloudy - 曇り (くもり/kumori), sunny - 晴れ (はれ/hare), hot - 暑い (あつい/atsui), cold - 寒い (さむい/samui) ";
+    const reference = [
+        { kanji: '雨', hiragana: 'あめ', romaji: 'ame', translation: 'rain' },
+        { kanji: '雪', hiragana: 'ゆき', romaji: 'yuki', translation: 'snow' },
+        { kanji: '曇り', hiragana: 'くもり', romaji: 'kumori', translation: 'cloudy' },
+        { kanji: '晴れ', hiragana: 'はれ', romaji: 'hare', translation: 'sunny' },
+        { kanji: '暑い', hiragana: 'あつい', romaji: 'atsui', translation: 'hot' },
+        { kanji: '寒い', hiragana: 'さむい', romaji: 'samui', translation: 'cold' },
+    ];
     const emptyCount = 20;
     const link = "weather-sudoku";
     const specificClass = "weather";

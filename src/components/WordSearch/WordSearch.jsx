@@ -4,22 +4,16 @@ import "./WordSearch.scss";
 import { useCallback } from "react";
 import completedSound from "../../assets/audio/mixkit-instant-win-2021.wav";
 import Congratulations from "../Congratulations/Congratulations";
+import { useNavigate, useLocation } from "react-router-dom";
+import { wordSearchPuzzles } from "../../assets/info/gameLists";
 
-const WordSearch = ({ games, startTime }) => {
+const WordSearch = (props) => {
+
+    const location = useLocation(); // Get the current location
+    const currentRouteIndex = wordSearchPuzzles.indexOf(location.pathname);
 
     const [game, setGame] = useState(null)
-
-    const letters = [
-        ['か', 'さ', 'じ', 'う', 'て', 'ん'],
-        ['ば', 'あ', 'て', 'と', 'け', 'い'],
-        ['ん', 'ぺ', 'ん', 'し', 'り', 'ほ'],
-        ['な', 'さ', 'し', 'ん', 'ぶ', 'ん'],
-        ['く', 'い', 'ゃ', 'ぶ', 'ま', 'お'],
-        ['つ', 'ふ', 'る', 'ぼ', 'う', 'し']
-    ];
-
-    const correctAnswers = ['かさ', 'かばん', 'くつ', 'さいふ', 'じてんしゃ', 'しんぶん', 'とけい', 'ぺん', 'ぼうし', 'ほん'];
-    const englishTranslation = ['umbrella', 'bag', 'shoes', 'wallet', 'bike', 'newspaper', 'clock', 'pen', 'hat', 'book'];
+    const navigate = useNavigate();
 
     const colors = [
         "#fee15a", "#fccd7a", "#f9c0a0", "#f18992", "#ea99c7",
@@ -37,22 +31,47 @@ const WordSearch = ({ games, startTime }) => {
     const {user} = useAuthContext();
     const bestScore = game ? game.bestScore : 0;
 
+    const navigateTo = (index, direction) => {
+        let targetIndex;
+
+        if (direction === "previous") {
+            console.log(index === 0)
+            targetIndex = index === 0 ? wordSearchPuzzles.length - 1 : index - 1;
+            console.log(targetIndex)
+        } else if (direction === "next") {
+            targetIndex = index === wordSearchPuzzles.length - 1 ? 0 : index + 1;
+            console.log(targetIndex)
+        }
+
+        navigate(wordSearchPuzzles[targetIndex]);
+        console.log("Navigating to:", wordSearchPuzzles[targetIndex]);
+    };
+
+    const handlePrevious = () => {
+        navigateTo(currentRouteIndex, "previous");
+        console.log(wordSearchPuzzles[0])
+    };
+
+    const handleNext = () => {
+        navigateTo(currentRouteIndex, "next");
+    };
+
     useEffect(() => {
 
-        if (games.length > 0) {
-            const foundGame = games.find(game => game.name === "Everyday Objects");
+        if (props.games.length > 0) {
+            const foundGame = props.games.find(game => game.name === props.title);
             if (foundGame) {
                 setGame(foundGame);
             }
         }
-    }, [games]);
+    }, [props.games, props.title]);
 
     const handleCellClick = async (event, letter) => {
         if (event.button === 0) { //left mouse button click
             event.preventDefault();
             setCurrent(current + letter); //Append the selected letter to current
             const word = current + letter
-            if (correctAnswers.includes(word) && !selectedAnswers.includes(word)) {
+            if (props.correctAnswers.includes(word) && !selectedAnswers.includes(word)) {
                 setScore(score + 1); //Update the score
                 setSelectedAnswers([...selectedAnswers, word]); // Add the selected answer
                 setCurrent(""); // Reset the current selected letters
@@ -81,7 +100,7 @@ const WordSearch = ({ games, startTime }) => {
                     // Update the bestScore in the backend
                     const response = await fetch(`/api/games/${gameId}`, {
                         method: 'PATCH',
-                        body: JSON.stringify({ bestScore: score.toFixed(2) }),
+                        body: JSON.stringify({ bestScore: ((score / 10) * 100).toFixed(2) }),
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': `Bearer ${user.token}`
@@ -131,7 +150,7 @@ const WordSearch = ({ games, startTime }) => {
 
         // Calculate the timePlayed for this playthrough
         const currentTime = new Date();
-        const timePlayedInSeconds = Math.floor((currentTime - startTime) / 1000); // Convert to seconds
+        const timePlayedInSeconds = Math.floor((currentTime - props.startTime) / 1000); // Convert to seconds
 
         // Convert timePlayed to "MM:SS" format
         const minutes = Math.floor(timePlayedInSeconds / 60);
@@ -189,20 +208,20 @@ const WordSearch = ({ games, startTime }) => {
     return (
         <div className="things_parent">
             <div className="header">
-                <a className="back" href="/drag-and-drop-puzzles">←Back</a>
+                <a className="back" href="/word-search-puzzles">←Back</a>
                 <div className="title">
-                    <h1>Everyday objects</h1>
+                    <h1>{props.title}</h1>
                 </div>
-                <p>Can you find these ten objects in the grid?</p>
+                <p>Can you find these ten "{props.title}" in the grid?</p>
                 <ul>
-                    {correctAnswers.map((word, index) => (
+                    {props.correctAnswers.map((word, index) => (
                             <li key={index} className={selectedAnswers.includes(word) ? "found" : ""}>
-                                <b>{englishTranslation[index]}</b>
+                                <b>{props.englishTranslation[index]}</b>
                             </li>
                     ))}
                 </ul>
             </div>
-            {letters.map((row, rowIndex) => (
+            {props.letters.map((row, rowIndex) => (
                 <div className="row" key={rowIndex}>
                     {row.map((letter, columnIndex) => (
                         <div
@@ -233,6 +252,18 @@ const WordSearch = ({ games, startTime }) => {
                 ) : (
                     <button onClick={handleClick}>Check</button>
                 )}
+                {/* {resetComponent ? (
+                    <button onClick={() => {navigate('/')}}>Home</button>
+                ) : null} */}
+                <div className="navigate_games">
+                    <button onClick={handlePrevious}>Previous</button>
+                    <button className="games_grid_link" onClick={() => {navigate('/word-search-puzzles')}}>
+                        <div className="white_line"></div>
+                        <div className="white_line"></div>
+                        <div className="white_line"></div>
+                    </button>
+                    <button onClick={handleNext}>Next</button>
+                </div>
             </div>
             {isCompleted && (
                 <Congratulations />

@@ -4,6 +4,7 @@ import { useAuthContext } from "../hooks/useAuthContext";
 import everydayObjectsPreview from "../assets/previewImages/everyday-objects.svg";
 import Navbar from "../components/Navbar/Navbar";
 import PuzzleGrid from "../components/PuzzleGrid/PuzzleGrid";
+import foodsPreview from "../assets/previewImages/foods.svg" 
 
 const WordSearchPage = () => {
 
@@ -31,7 +32,8 @@ const WordSearchPage = () => {
     }, [user])
 
     const desiredOrder = [
-        "Everyday Objects", 
+        "Everyday Objects",
+        "Foods" 
     ];
 
     const sortedGames = games.slice().sort((a, b) => {
@@ -41,11 +43,13 @@ const WordSearchPage = () => {
     });
 
     const routes = [
-        "/word-search-puzzles/everyday-objects",  
+        "/word-search-puzzles/everyday-objects",
+        "/word-search-puzzles/foods"  
     ];
 
     const puzzlePreviews = [
         everydayObjectsPreview,
+        foodsPreview
     ];
 
     return (

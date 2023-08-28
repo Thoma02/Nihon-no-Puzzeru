@@ -28,7 +28,14 @@ const AnimalSudokuPage = () => {
 
     const title = "Animal Sudoku";
     const info = "Below is a kanji sudoku where you need to fill the empty space with the right animal kanji";
-    const reference = "Refrence: dog - 犬 (いぬ/inu), cat - 猫 (ねこ/neko), bird - 鳥 (とり/tori), horse - 緑 (うま/uma), mouse - 鼠 (ねずみ/nezumi), fish - 魚 (さかな/sakana)";
+    const reference = [
+        { kanji: '犬', hiragana: 'いぬ', romaji: 'inu', translation: 'dog' },
+        { kanji: '猫', hiragana: 'ねこ', romaji: 'neko', translation: 'cat' },
+        { kanji: '鳥', hiragana: 'とり', romaji: 'tori', translation: 'bird' },
+        { kanji: '馬', hiragana: 'うま', romaji: 'uma', translation: 'horse' },
+        { kanji: '鼠', hiragana: 'ねずみ', romaji: 'nezumi', translation: 'mouse' },
+        { kanji: '魚', hiragana: 'さかな', romaji: 'sakana', translation: 'fish' },
+    ];
     const emptyCount = 15;
     const link = "animal-sudoku";
 

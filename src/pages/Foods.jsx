@@ -3,25 +3,26 @@ import { useAuthContext } from "../hooks/useAuthContext";
 import Navbar from "../components/Navbar/Navbar";
 import WordSearch from "../components/WordSearch/WordSearch";
 
-const EverydayObjects = () => {
+const Foods = () => {
 
     const [games, setGames] = useState([]);
     const {user} = useAuthContext();
 
-    const title = "Everyday Objects";
+    const title = "Foods";
 
     const letters = [
-        ['か', 'さ', 'じ', 'う', 'て', 'ん'],
-        ['ば', 'あ', 'て', 'と', 'け', 'い'],
-        ['ん', 'ぺ', 'ん', 'し', 'り', 'ほ'],
-        ['な', 'さ', 'し', 'ん', 'ぶ', 'ん'],
-        ['く', 'い', 'ゃ', 'ぶ', 'ま', 'お'],
-        ['つ', 'ふ', 'る', 'ぼ', 'う', 'し']
+        ['チ', 'ョ', 'コ', 'レ', 'ー', 'ト', 'カ', 'ネ'],
+        ['マ', 'ヒ', 'ー', 'ケ', 'ジ', 'テ', 'ベ', 'ト'],
+        ['サ', 'ツ', 'ヒ', 'サ', 'ュ', 'リ', 'ホ', 'ケ'],
+        ['ン', 'ラ', 'ー', 'テ', 'ー', 'ダ', 'ん', 'ー'],
+        ['ド', 'ー', 'ナ', 'ツ', 'ス', 'テ', 'ー', 'キ'],
+        ['イ', 'パ', 'フ', 'ル', 'ス', 'ヌ', 'メ', 'チ'],
+        ['ッ', 'リ', 'ハ', 'ン', 'バ', 'ー', 'ガ', 'ー'],
+        ['チ', 'フ', 'ラ', 'ー', 'メ', 'ン', 'し', 'ズ']
     ];
+    const correctAnswers = ['チョコレート', 'ラーメン', 'ドーナツ', 'ジュース', 'チーズ', 'ハンバーガー', 'ステーキ', 'ケーキ', 'コーヒー', 'サンドイッチ'];
 
-    const correctAnswers = ['かさ', 'かばん', 'くつ', 'さいふ', 'じてんしゃ', 'しんぶん', 'とけい', 'ぺん', 'ぼうし', 'ほん'];
-
-    const englishTranslation = ['umbrella', 'bag', 'shoes', 'wallet', 'bike', 'newspaper', 'clock', 'pen', 'hat', 'book'];
+    const englishTranslation = ['chocolate', 'ramen', 'donut', 'juice', 'cheese', 'hamburger', 'steak', 'cake', 'coffee', 'sandwich'];
 
     let startTime = new Date();
 
@@ -53,4 +54,4 @@ const EverydayObjects = () => {
     )
 }
 
-export default EverydayObjects;
+export default Foods;

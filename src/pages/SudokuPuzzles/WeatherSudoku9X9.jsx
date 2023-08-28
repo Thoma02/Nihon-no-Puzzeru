@@ -33,9 +33,19 @@ const WeatherSudoku9x9 = () => {
         ['暑い', '天気', '曇り', '晴れ', '霧', '雪', '風', '寒い', '雨']
     ];
 
-    const title = "Weather Sudoku";
+    const title = "Weather Sudoku 9x9";
     const info = "Below is a kanji sudoku where you need to fill the empty space with the right color";
-    const reference = "Refrence: weather - 天気 (てんき/tenki), rain - 雨 (あめ/ame), snow - 雪 (ゆき/yuki), cloudy - 曇り (くもり/kumori), sunny - 晴れ (はれ/hare), fog - 霧 (きり/kiri), wind - 風 (かぜ/kaze), hot - 暑い (あつい/atsui), cold - 寒い (さむい/samui) ";
+    const reference = [
+        { kanji: '天気', hiragana: 'てんき', romaji: 'tenki', translation: 'weather' },
+        { kanji: '雨', hiragana: 'あめ', romaji: 'ame', translation: 'rain' },
+        { kanji: '雪', hiragana: 'ゆき', romaji: 'yuki', translation: 'snow' },
+        { kanji: '曇り', hiragana: 'くもり', romaji: 'kumori', translation: 'cloudy' },
+        { kanji: '晴れ', hiragana: 'はれ', romaji: 'hare', translation: 'sunny' },
+        { kanji: '霧', hiragana: 'きり', romaji: 'kiri', translation: 'fog' },
+        { kanji: '風', hiragana: 'かぜ', romaji: 'kaze', translation: 'wind' },
+        { kanji: '暑い', hiragana: 'あつい', romaji: 'atsui', translation: 'hot' },
+        { kanji: '寒い', hiragana: 'さむい', romaji: 'samui', translation: 'cold' },
+    ];
     const emptyCount = 44;
     const link = "weather-sudoku-9x9";
     const specificClass = "weather";

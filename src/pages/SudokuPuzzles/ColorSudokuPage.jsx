@@ -28,7 +28,14 @@ const ColorSudokuPage = () => {
 
     const title = "Color Sudoku";
     const info = "Below is a kanji sudoku where you need to fill the empty space with the right color";
-    const reference = "Refrence: red - 赤 (あか/aka), yellow - 黄色 (きいろ/kiiro), blue - 青 (あお/ao), green - 緑 (みどり/midori), black - 黒 (くろ/kuro), white - 白 (しろ/shiro)";
+    const reference = [
+        { kanji: '赤', hiragana: 'あか', romaji: 'aka', translation: 'red' },
+        { kanji: '黄色', hiragana: 'きいろ', romaji: 'kiiro', translation: 'yellow' },
+        { kanji: '青', hiragana: 'あお', romaji: 'ao', translation: 'blue' },
+        { kanji: '緑', hiragana: 'みどり', romaji: 'midori', translation: 'green' },
+        { kanji: '黒', hiragana: 'くろ', romaji: 'kuro', translation: 'black' },
+        { kanji: '白', hiragana: 'しろ', romaji: 'shiro', translation: 'white' },
+    ];
     const emptyCount = 15;
     const link = "color-sudoku";
 

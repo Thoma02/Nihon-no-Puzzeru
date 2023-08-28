@@ -11,6 +11,7 @@ import PuzzleGrid from "../components/PuzzleGrid/PuzzleGrid";
 const SudokuPage = () => {
 
     const [games, setGames] = useState([])
+    // const [currentIndex, setCurrentIndex] = useState(0);
     const {user} = useAuthContext()
 
     useEffect(() => {
@@ -38,6 +39,8 @@ const SudokuPage = () => {
         "Weather Sudoku",
         "Weather Sudoku 9x9",
         "Animal Sudoku",
+        "Numbers Sudoku",
+        "Beginner Kanji 1"
     ];
 
     const sortedGames = games.slice().sort((a, b) => {
@@ -51,6 +54,8 @@ const SudokuPage = () => {
         "/sudoku-puzzles/weather-sudoku",
         "/sudoku-puzzles/weather-sudoku-9x9",
         "/sudoku-puzzles/animal-sudoku",
+        "/sudoku-puzzles/numbers-sudoku",
+        "/sudoku-puzzles/beginner-kanji-1"
     ];
 
     const puzzlePreviews = [
