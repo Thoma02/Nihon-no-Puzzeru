@@ -37,17 +37,22 @@ const signupUser = async (req, res) => {
                 bestScore: 0
             },
             {
+                name: "Days of the Week",
+                completed: false,
+                bestScore: 0
+            },
+            {
                 name: "Everyday Objects",
                 completed: false,
                 bestScore: 0,
             },
             {
-                name: "Color Sudoku",
+                name: "Foods",
                 completed: false,
-                bestScore: 0
+                bestScore: 0,
             },
             {
-                name: "Days of the Week",
+                name: "Color Sudoku",
                 completed: false,
                 bestScore: 0
             },
@@ -62,7 +67,17 @@ const signupUser = async (req, res) => {
                 bestScore: 0
             },
             {
+                name: "Numbers Sudoku",
+                completed: false,
+                bestScore: 0
+            },
+            {
                 name: "Animal Sudoku",
+                completed: false,
+                bestScore: 0
+            },
+                        {
+                name: "Beginner Kanji 1",
                 completed: false,
                 bestScore: 0
             },
