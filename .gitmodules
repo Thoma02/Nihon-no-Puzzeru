@@ -1,0 +1,3 @@
+[submodule "language_puzzles_backend"]
+	path = language_puzzles_backend
+	url = ./

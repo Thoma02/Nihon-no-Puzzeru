@@ -76,8 +76,18 @@ const signupUser = async (req, res) => {
                 completed: false,
                 bestScore: 0
             },
-                        {
+            {
                 name: "Beginner Kanji 1",
+                completed: false,
+                bestScore: 0
+            },
+            {
+                name: "Person Vocab 1",
+                completed: false,
+                bestScore: 0
+            },
+            {
+                name: "Person Vocab 2",
                 completed: false,
                 bestScore: 0
             },
