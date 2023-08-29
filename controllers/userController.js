@@ -52,6 +52,16 @@ const signupUser = async (req, res) => {
                 bestScore: 0,
             },
             {
+                name: "Fruits",
+                completed: false,
+                bestScore: 0,
+            },
+            {
+                name: "Vegetables",
+                completed: false,
+                bestScore: 0,
+            },
+            {
                 name: "Color Sudoku",
                 completed: false,
                 bestScore: 0
@@ -88,6 +98,31 @@ const signupUser = async (req, res) => {
             },
             {
                 name: "Person Vocab 2",
+                completed: false,
+                bestScore: 0
+            },
+                        {
+                name: "Big Vocab 1",
+                completed: false,
+                bestScore: 0
+            },
+            {
+                name: "Entrance Vocab",
+                completed: false,
+                bestScore: 0
+            },
+            {
+                name: "Tree Vocab",
+                completed: false,
+                bestScore: 0
+            },
+            {
+                name: "Dog Vocab",
+                completed: false,
+                bestScore: 0
+            },
+            {
+                name: "Book Vocab",
                 completed: false,
                 bestScore: 0
             },
