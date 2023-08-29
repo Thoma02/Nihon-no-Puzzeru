@@ -117,6 +117,18 @@ th {
     background-color: #fff;
 }
 
+.color_sudoku_parent .sudoku_cell.letters_3 {
+    font-size: 30px;
+}
+
+.color_sudoku_parent .sudoku_cell.letters_4 {
+    font-size: 21px;
+}
+
+.color_sudoku_parent .sudoku_cell.letters_4 textarea{
+    font-size: 21px;
+}
+
 // .back:hover {
 //     cursor: pointer;
 // }
@@ -183,6 +195,10 @@ th {
         line-height: 78px;
         font-size: 28px;
     }
+
+    .color_sudoku_parent .sudoku_cell.letters_3 {
+        font-size: 26px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -221,27 +237,13 @@ th {
         line-height: 63px;
         font-size: 26px;
     }
+
+    .color_sudoku_parent .sudoku_cell.letters_3 {
+        font-size: 24px;
+    }
 }
 
 @media screen and (max-width: 640px) {
-    // .color_sudoku_parent {
-    //     width: 550px;
-    //     border-radius: 30px;
-    //     padding: 10px;
-    // }
-
-    // .color_sudoku_parent .sudoku_cell {
-    //     width: 80px;
-    //     height: 80px;
-    //     font-size: 26px;
-    // }
-
-    // .color_sudoku_parent textarea {
-    //     width: 78px;
-    //     height: 78px;
-    //     line-height: 78px;
-    //     font-size: 26px;
-    // }
 
     .color_sudoku_parent.weather {
         width: 550px;
@@ -298,6 +300,10 @@ th {
         line-height: 48px;
         font-size: 22px;
     }
+
+    .color_sudoku_parent .sudoku_cell.letters_3 {
+        font-size: 19px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -336,6 +342,10 @@ th {
         height: 42px;
         line-height: 42px;
         font-size: 18px;
+    }
+
+    .color_sudoku_parent .sudoku_cell.letters_3 {
+        font-size: 14px;
     }
 }
 
@@ -396,6 +406,10 @@ th {
         height: 32px;
         line-height: 32px;
         font-size: 22px;
+    }
+
+    .color_sudoku_parent .sudoku_cell.letters_3 {
+        font-size: 12px;
     }
 }
 

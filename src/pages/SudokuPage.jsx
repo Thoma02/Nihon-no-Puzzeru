@@ -40,7 +40,11 @@ const SudokuPage = () => {
         "Weather Sudoku 9x9",
         "Animal Sudoku",
         "Numbers Sudoku",
-        "Beginner Kanji 1"
+        "Beginner Kanji 1",
+        "Person Vocab 1",
+        "Person Vocab 2",
+        "Entrance Vocab 1",
+        "Big Vocab 1"
     ];
 
     const sortedGames = games.slice().sort((a, b) => {
@@ -55,7 +59,11 @@ const SudokuPage = () => {
         "/sudoku-puzzles/weather-sudoku-9x9",
         "/sudoku-puzzles/animal-sudoku",
         "/sudoku-puzzles/numbers-sudoku",
-        "/sudoku-puzzles/beginner-kanji-1"
+        "/sudoku-puzzles/beginner-kanji-1",
+        "/sudoku-puzzles/person-vocab-1",
+        "/sudoku-puzzles/person-vocab-2",
+        "/sudoku-puzzles/entrance-vocab-1",
+        "/sudoku-puzzles/big-vocab-1"
     ];
 
     const puzzlePreviews = [

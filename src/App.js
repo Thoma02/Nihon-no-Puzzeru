@@ -19,6 +19,10 @@ import WeatherSudoku from './pages/SudokuPuzzles/WeatherSudoku';
 import AnimalSudoku from './pages/SudokuPuzzles/AnimalSudoku';
 import NumbersSudokuPage from './pages/SudokuPuzzles/Wanikani-1/Numbers';
 import BeginnerKanjiPage1 from './pages/SudokuPuzzles/Wanikani-1/BeginnerKanji-1';
+import PersonVocab1 from './pages/SudokuPuzzles/Wanikani-1/Person';
+import PersonVocab2 from './pages/SudokuPuzzles/Wanikani-1/Person2';
+import EntranceVocab1 from './pages/SudokuPuzzles/Wanikani-1/Entrance';
+import BigVocab1 from './pages/SudokuPuzzles/Wanikani-1/Big';
 
 function App() {
 
@@ -91,6 +95,22 @@ function App() {
           <Route 
             path='/sudoku-puzzles/beginner-kanji-1'
             element={<BeginnerKanjiPage1 />}
+          />
+          <Route 
+            path='/sudoku-puzzles/person-vocab-1'
+            element={<PersonVocab1 />}
+          />
+          <Route 
+            path='/sudoku-puzzles/person-vocab-2'
+            element={<PersonVocab2 />}
+          />
+          <Route 
+            path='/sudoku-puzzles/entrance-vocab-1'
+            element={<EntranceVocab1 />}
+          />
+          <Route 
+            path='/sudoku-puzzles/big-vocab-1'
+            element={<BigVocab1 />}
           />
         </Routes>
       </BrowserRouter>
