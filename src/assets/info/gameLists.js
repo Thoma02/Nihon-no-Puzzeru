@@ -4,6 +4,14 @@ const sudokuPuzzles = [
     "/sudoku-puzzles/weather-sudoku-9x9",
     "/sudoku-puzzles/animal-sudoku",
     "/sudoku-puzzles/numbers-sudoku",
+    "/sudoku-puzzles/beginner-kanji-1",
+    "/sudoku-puzzles/person-vocab-1",
+    "/sudoku-puzzles/person-vocab-2",
+    "/sudoku-puzzles/entrance-vocab-1",
+    "/sudoku-puzzles/big-vocab-1",
+    "/sudoku-puzzles/tree-vocab",
+    "/sudoku-puzzles/dog-vocab",
+    "/sudoku-puzzles/book-vocab"
 ]
 
 const wordSearchPuzzles = [

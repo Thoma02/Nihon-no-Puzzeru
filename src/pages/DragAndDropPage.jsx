@@ -53,6 +53,11 @@ const DragAndDropPage = () => {
         daysWeekPreview,
     ];
 
+    const kanjis = [
+        "",
+        ""
+    ]
+
     return (
         <div className="games_parent">
             <Navbar />
@@ -61,6 +66,7 @@ const DragAndDropPage = () => {
                 sortedGames={sortedGames}
                 routes={routes}
                 puzzlePreviews={puzzlePreviews}
+                kanjis={kanjis}
             />
         </div>
     );

@@ -28,7 +28,7 @@ const BigVocab1 = () => {
         ['大人しい', '大学', '大した', '大切', '大きい', '大きさ']
     ];
 
-    const title = "Big Vocab 1";
+    const title = "Big Vocab";
     const info = "Below is a kanji sudoku where you need to fill the empty space with the right word containing the person kanji";
     const reference = [
         { kanji: '大きい', hiragana: 'おおきい', romaji: 'ookii', translation: 'big' },

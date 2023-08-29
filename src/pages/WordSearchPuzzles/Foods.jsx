@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useAuthContext } from "../hooks/useAuthContext";
-import Navbar from "../components/Navbar/Navbar";
-import WordSearch from "../components/WordSearch/WordSearch";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import Navbar from "../../components/Navbar/Navbar";
+import WordSearch from "../../components/WordSearch/WordSearch";
 
 const Foods = () => {
 

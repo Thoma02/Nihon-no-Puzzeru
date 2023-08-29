@@ -28,7 +28,7 @@ const EntranceVocab1 = () => {
         ['入力', '入れる', '気に入る', '入り口', '入る', '入学']
     ];
 
-    const title = "Entrance Vocab 1";
+    const title = "Entrance Vocab";
     const info = "Below is a kanji sudoku where you need to fill the empty space with the right word containing the person kanji";
     const reference = [
         { kanji: '入り口', hiragana: 'いりぐち', romaji: 'iriguchi', translation: 'entrance' },
@@ -39,7 +39,7 @@ const EntranceVocab1 = () => {
         { kanji: '入学', hiragana: 'にゅうがく', romaji: 'nyuugaku', translation: 'admission to school' },
     ];
     const emptyCount = 19;
-    const link = "person-vocab-2";
+    const link = "entrance-vocab";
     const specificClass = "letters_4"
 
     let startTime = new Date();

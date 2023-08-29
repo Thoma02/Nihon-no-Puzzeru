@@ -33,7 +33,9 @@ const WordSearchPage = () => {
 
     const desiredOrder = [
         "Everyday Objects",
-        "Foods" 
+        "Foods",
+        "Fruits",
+        "Vegetables" 
     ];
 
     const sortedGames = games.slice().sort((a, b) => {
@@ -44,13 +46,22 @@ const WordSearchPage = () => {
 
     const routes = [
         "/word-search-puzzles/everyday-objects",
-        "/word-search-puzzles/foods"  
+        "/word-search-puzzles/foods",
+        "/word-search-puzzles/fruits",
+        "/word-search-puzzles/vegetables"
     ];
 
     const puzzlePreviews = [
         everydayObjectsPreview,
         foodsPreview
     ];
+
+    const kanjis = [
+        "",
+        "",
+        "りんご, いちご, すいか, ぶどう, もも, なし, さくらんぼ, うめ, いちじく",
+        "にんじん, きゅうり, じゃがいも, たまねぎ, にんにく, なす, かぼちゃ, きのこ, とうもろこし"
+    ]
 
     return (
         <div className="games_parent">
@@ -60,6 +71,7 @@ const WordSearchPage = () => {
                 sortedGames={sortedGames}
                 routes={routes}
                 puzzlePreviews={puzzlePreviews}
+                kanjis={kanjis}
             />
         </div>
     );

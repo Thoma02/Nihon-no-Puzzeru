@@ -8,7 +8,7 @@ const PersonVocab1 = () => {
     const [games, setGames] = useState([]);
     const {user} = useAuthContext();
 
-//kanji = , 女の、男の、友、一、間
+//kanji = 大人, 男の人, 女の人, 友人, 一人, 人間
 
     const unfilledGrid = [
         ['', '男の人', '女の人', '友人', '', '一人'],

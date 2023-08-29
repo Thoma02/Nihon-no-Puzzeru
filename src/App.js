@@ -9,20 +9,25 @@ import Signup from './pages/Signup';
 import SudokuPage from './pages/SudokuPage';
 import WordSearchPage from './pages/WordSearchPage';
 import DragAndDropPage from './pages/DragAndDropPage';
-import MonthsPage from './pages/MonthsPage';
-import EverydayObjectsPage from './pages/EverydayObjectsPage';
-import Foods from './pages/Foods';
+import MonthsPage from './pages/DragAndDropPuzzles/MonthsPage';
+import EverydayObjectsPage from './pages/WordSearchPuzzles/EverydayObjectsPage';
+import Foods from './pages/WordSearchPuzzles/Foods';
 import ColorSudokuPage from './pages/SudokuPuzzles/ColorSudokuPage';
-import DaysWeekPage from './pages/DaysWeekPage';
+import DaysWeekPage from './pages/DragAndDropPuzzles/DaysWeekPage';
 import WeatherSudoku9x9 from './pages/SudokuPuzzles/WeatherSudoku9X9';
 import WeatherSudoku from './pages/SudokuPuzzles/WeatherSudoku';
 import AnimalSudoku from './pages/SudokuPuzzles/AnimalSudoku';
-import NumbersSudokuPage from './pages/SudokuPuzzles/Wanikani-1/Numbers';
-import BeginnerKanjiPage1 from './pages/SudokuPuzzles/Wanikani-1/BeginnerKanji-1';
-import PersonVocab1 from './pages/SudokuPuzzles/Wanikani-1/Person';
-import PersonVocab2 from './pages/SudokuPuzzles/Wanikani-1/Person2';
-import EntranceVocab1 from './pages/SudokuPuzzles/Wanikani-1/Entrance';
-import BigVocab1 from './pages/SudokuPuzzles/Wanikani-1/Big';
+import NumbersSudokuPage from './pages/SudokuPuzzles/KanjiSystem/Numbers';
+import BeginnerKanjiPage1 from './pages/SudokuPuzzles/KanjiSystem/BeginnerKanji-1';
+import PersonVocab1 from './pages/SudokuPuzzles/KanjiSystem/Person';
+import PersonVocab2 from './pages/SudokuPuzzles/KanjiSystem/Person2';
+import EntranceVocab1 from './pages/SudokuPuzzles/KanjiSystem/Entrance';
+import BigVocab1 from './pages/SudokuPuzzles/KanjiSystem/Big';
+import TreeVocab from './pages/SudokuPuzzles/KanjiSystem/Tree';
+import DogVocab from './pages/SudokuPuzzles/KanjiSystem/Dog';
+import BookVocab from './pages/SudokuPuzzles/KanjiSystem/Book';
+import Fruits from './pages/WordSearchPuzzles/Fruits';
+import Vegetables from './pages/WordSearchPuzzles/Vegetables';
 
 function App() {
 
@@ -69,6 +74,14 @@ function App() {
             element={<Foods />}
           />
           <Route 
+            path='/word-search-puzzles/fruits'
+            element={<Fruits />}
+          />
+          <Route 
+            path='/word-search-puzzles/vegetables'
+            element={<Vegetables />}
+          />
+          <Route 
             path='/sudoku-puzzles/color-sudoku'
             element={<ColorSudokuPage />}
           />
@@ -111,6 +124,18 @@ function App() {
           <Route 
             path='/sudoku-puzzles/big-vocab-1'
             element={<BigVocab1 />}
+          />
+          <Route 
+            path='/sudoku-puzzles/tree-vocab'
+            element={<TreeVocab />}
+          />
+          <Route 
+            path='/sudoku-puzzles/dog-vocab'
+            element={<DogVocab />}
+          />
+          <Route 
+            path='/sudoku-puzzles/book-vocab'
+            element={<BookVocab />}
           />
         </Routes>
       </BrowserRouter>

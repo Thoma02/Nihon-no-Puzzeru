@@ -144,7 +144,7 @@ const WordSearch = (props) => {
         
         setResetComponent(true)
         
-        if(selectedAnswers.length === 10) {
+        if(selectedAnswers.length === props.correctAnswers.length) {
             setIsCompleted(true);
         }
 
@@ -168,7 +168,7 @@ const WordSearch = (props) => {
              // Create a new entry for the timesPlayed array
             const newPlaythrough = {
                 playNumber: game.playthrough ? game.playthrough.length + 1 : 1,
-                score: ((score / 10) * 100).toFixed(2),
+                score: ((score / props.correctAnswers.length) * 100).toFixed(2),
                 timePlayed: formattedTimePlayed
             };
 
@@ -208,7 +208,6 @@ const WordSearch = (props) => {
     return (
         <div className="things_parent">
             <div className="header">
-                <a className="back" href="/word-search-puzzles">←Back</a>
                 <div className="title">
                     <h1>{props.title}</h1>
                 </div>
@@ -268,7 +267,7 @@ const WordSearch = (props) => {
             {isCompleted && (
                 <Congratulations />
             )}
-            {resetComponent && !isCompleted ? (<div className="score">Score: {((score / 10) * 100)}%</div>) : null}
+            {resetComponent && !isCompleted ? (<div className="score">Score: {((score / props.correctAnswers.length) * 100).toFixed(2)}%</div>) : null}
             {error && <div className="error">{error}</div>}
         </div>
     );

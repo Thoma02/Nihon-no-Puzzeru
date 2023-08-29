@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useAuthContext } from "../hooks/useAuthContext";
-import Navbar from "../components/Navbar/Navbar";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import Navbar from "../../components/Navbar/Navbar";
 // import DaysWeek from "../components/4.DaysWeek/DaysWeek";
-import Months from "../components/DragAndDrop/DragAndDrop";
+import Months from "../../components/DragAndDrop/DragAndDrop";
 
 const DaysWeekPage = () => {
 
