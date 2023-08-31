@@ -1,5 +1,3 @@
-# Getting Started with Create React App
-
 This is a MERN project made with MongoDB, Express, React and Node.js.
 It is a language learning application whose purpose is to help with expanding ones is
 vocabulary through playing games. Right now the only option is about
@@ -38,6 +36,8 @@ the score achieved and on which playthrough are stored.
 Inside each of the components and hooks and pages there is a lot that can be explained,
 and I am not sure if mentioning all of it on this .txt file makes sense. So please tell
 me if you need any part of the code explained and I will gladly do so.
+
+# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
