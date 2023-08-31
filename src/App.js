@@ -33,110 +33,42 @@ function App() {
 
   const { user } = useAuthContext()
 
+  const pages = [
+    { path: '/', element: <HomePage /> },
+    { path: '/login', element: !user ? <Login /> : <Navigate to={'/'} /> },
+    { path: '/signup', element: !user ? <Signup /> : <Navigate to={'/'} /> },
+    { path: '/sudoku-puzzles', element: <SudokuPage /> },
+    { path: '/word-search-puzzles', element: <WordSearchPage /> },
+    { path: '/drag-and-drop-puzzles', element: <DragAndDropPage /> },
+    { path: '/drag-and-drop-puzzles/months', element: <MonthsPage /> },
+    { path: '/word-search-puzzles/everyday-objects', element: <EverydayObjectsPage /> },
+    { path: '/word-search-puzzles/foods', element: <Foods /> },
+    { path: '/word-search-puzzles/fruits', element: <Fruits /> },
+    { path: '/word-search-puzzles/vegetables', element: <Vegetables /> },
+    { path: '/sudoku-puzzles/color-sudoku', element: <ColorSudokuPage /> },
+    { path: '/drag-and-drop-puzzles/days-week', element: <DaysWeekPage /> },
+    { path: '/sudoku-puzzles/weather-sudoku-9x9', element: <WeatherSudoku9x9 /> },
+    { path: '/sudoku-puzzles/numbers-sudoku', element: <NumbersSudokuPage /> },
+    { path: '/sudoku-puzzles/animal-sudoku', element: <AnimalSudoku /> },
+    { path: '/sudoku-puzzles/weather-sudoku', element: <WeatherSudoku /> },
+    { path: '/sudoku-puzzles/beginner-kanji-1', element: <BeginnerKanjiPage1 /> },
+    { path: '/sudoku-puzzles/person-vocab-1', element: <PersonVocab1 /> },
+    { path: '/sudoku-puzzles/person-vocab-2', element: <PersonVocab2 /> },
+    { path: '/sudoku-puzzles/entrance-vocab-1', element: <EntranceVocab1 /> },
+    { path: '/sudoku-puzzles/big-vocab-1', element: <BigVocab1 /> },
+    { path: '/sudoku-puzzles/tree-vocab', element: <TreeVocab /> },
+    { path: '/sudoku-puzzles/dog-vocab', element: <DogVocab /> },
+    { path: '/sudoku-puzzles/book-vocab', element: <BookVocab /> },
+  ];
+
+
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route 
-            path='/'
-            element={<HomePage />}
-          />
-          <Route 
-            path='/login'
-            element={!user ? <Login /> : <Navigate to={'/'} />}
-          />
-          <Route 
-            path='/signup'
-            element={!user ? <Signup /> : <Navigate to={'/'} />}
-          />
-          <Route 
-            path='/sudoku-puzzles'
-            element={<SudokuPage />}
-          />
-          <Route 
-            path='/word-search-puzzles'
-            element={<WordSearchPage />}
-          />
-          <Route 
-            path='/drag-and-drop-puzzles'
-            element={<DragAndDropPage />}
-          />
-          <Route 
-            path='/drag-and-drop-puzzles/months'
-            element={<MonthsPage />}
-          />
-          <Route 
-            path='/word-search-puzzles/everyday-objects'
-            element={<EverydayObjectsPage />}
-          />
-          <Route 
-            path='/word-search-puzzles/foods'
-            element={<Foods />}
-          />
-          <Route 
-            path='/word-search-puzzles/fruits'
-            element={<Fruits />}
-          />
-          <Route 
-            path='/word-search-puzzles/vegetables'
-            element={<Vegetables />}
-          />
-          <Route 
-            path='/sudoku-puzzles/color-sudoku'
-            element={<ColorSudokuPage />}
-          />
-          <Route 
-            path='/drag-and-drop-puzzles/days-week'
-            element={<DaysWeekPage />}
-          />
-          <Route 
-            path='/sudoku-puzzles/weather-sudoku-9x9'
-            element={<WeatherSudoku9x9 />}
-          />
-          <Route 
-            path='/sudoku-puzzles/numbers-sudoku'
-            element={<NumbersSudokuPage />}
-          />
-          <Route 
-            path='/sudoku-puzzles/animal-sudoku'
-            element={<AnimalSudoku />}
-          />
-          <Route 
-            path='/sudoku-puzzles/weather-sudoku'
-            element={<WeatherSudoku />}
-          />
-          <Route 
-            path='/sudoku-puzzles/beginner-kanji-1'
-            element={<BeginnerKanjiPage1 />}
-          />
-          <Route 
-            path='/sudoku-puzzles/person-vocab-1'
-            element={<PersonVocab1 />}
-          />
-          <Route 
-            path='/sudoku-puzzles/person-vocab-2'
-            element={<PersonVocab2 />}
-          />
-          <Route 
-            path='/sudoku-puzzles/entrance-vocab-1'
-            element={<EntranceVocab1 />}
-          />
-          <Route 
-            path='/sudoku-puzzles/big-vocab-1'
-            element={<BigVocab1 />}
-          />
-          <Route 
-            path='/sudoku-puzzles/tree-vocab'
-            element={<TreeVocab />}
-          />
-          <Route 
-            path='/sudoku-puzzles/dog-vocab'
-            element={<DogVocab />}
-          />
-          <Route 
-            path='/sudoku-puzzles/book-vocab'
-            element={<BookVocab />}
-          />
+          {pages.map((page, index) => (
+            <Route key={index} path={page.path} element={page.element} />
+          ))}
         </Routes>
       </BrowserRouter>
     </div>
