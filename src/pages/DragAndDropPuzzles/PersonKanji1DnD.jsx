@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { useAuthContext } from "../hooks/useAuthContext";
-import Navbar from "../components/Navbar/Navbar";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import Navbar from "../../components/Navbar/Navbar";
 // import DaysWeek from "../components/4.DaysWeek/DaysWeek";
-import Months from "../components/DragAndDrop/DragAndDrop";
+import Months from "../../components/DragAndDrop/DragAndDrop";
 
-const DaysWeekPage = () => {
+const PersonVocab1DnD = () => {
 
     const [games, setGames] = useState([])
     const {user} = useAuthContext()
 
-    const kanji = ['日', '月', '火', '水', '木', '金', '土'];
-    const correctAnswers = ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'];
-    const answersLength = 7;
-    const gameName = "Days of the Week";
-    const info = "Write the days of the week in the appropriate order using the correct kanji and adding '曜日' to the end of each.";
+    const kanji = ['大人', '男の人', '女の人', '友人', '人間', '一人'];
+    const correctAnswers = ['大人', '男の人', '女の人', '友人', '人間', '一人'];
+    const gameName = "Person Vocab 1 DnD";
+    const info = "Drag the appropriate kanji to its translation";
     const labelValues = [
-        "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+        "Adult", "Man", "Woman", "Friend", "Human Being", "One Person, Alone"
     ];
-    const answerAddon = "曜日";
-    const specificClass = "day";
+    const answerAddon = "";
+    const specificClass = "words_6";
+    const lettersClass = "letters_3";
     let startTime = new Date();
 
     useEffect(() => {
@@ -54,10 +54,11 @@ const DaysWeekPage = () => {
                 startTime={startTime} 
                 kanji={kanji} 
                 correctAnswers={correctAnswers} 
-                answersLength={answersLength}
+                lettersClass={lettersClass}
+                // answersLength={answersLength}
             />
         </div>
     )
 }
 
-export default DaysWeekPage;
+export default PersonVocab1DnD;

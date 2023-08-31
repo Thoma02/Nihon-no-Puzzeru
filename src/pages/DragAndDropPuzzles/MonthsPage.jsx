@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from "react";
-import { useAuthContext } from "../hooks/useAuthContext";
-import Navbar from "../components/Navbar/Navbar";
-import DragAndDrop from "../components/DragAndDrop/DragAndDrop";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import Navbar from "../../components/Navbar/Navbar";
+import DragAndDrop from "../../components/DragAndDrop/DragAndDrop";
 
 const MonthsPage = () => {
 

@@ -33,6 +33,9 @@ const Navbar = () => {
             </div>
             {user && (
                 <div className={`user_container loged_in ${clicked ? 'clicked' : ''}`}>
+                    <div className="sudoku_pages small home" onClick={() => navigate('/')}>
+                        <p>Home</p>
+                    </div>
                     <div className="sudoku_pages small" onClick={() => navigate('/sudoku-puzzles')}>
                         <p>Sudoku Puzzles</p>
                     </div>
@@ -48,6 +51,9 @@ const Navbar = () => {
             )}
             {!user && (
                 <div className={`user_container loged_out ${clicked ? 'clicked' : ''}`}>    
+                    <div className="sudoku_pages small home" onClick={() => navigate('/')}>
+                        <p>Home</p>
+                    </div>
                     <div className="sudoku_pages small" onClick={() => navigate('/sudoku-puzzles')}>
                         <p>Sudoku Puzzles</p>
                     </div>

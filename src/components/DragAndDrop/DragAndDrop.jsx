@@ -7,6 +7,7 @@ import Congratulations from "../Congratulations/Congratulations";
 import { dragAndDropPuzzles } from "../../assets/info/gameLists";
 
 const DragAndDrop = (props) => {
+    console.log(props.answersLength)
 
     const location = useLocation(); // Get the current location
     const currentRouteIndex = dragAndDropPuzzles.indexOf(location.pathname);
@@ -15,7 +16,7 @@ const DragAndDrop = (props) => {
     const [game, setGame] = useState(null);
 
     //The answers array contains all given answers
-    const [answers, setAnswers] = useState(Array(props.answersLength).fill(""));
+    const [answers, setAnswers] = useState(Array(props.correctAnswers.length).fill(""));
     
     //Keeps track of the score
     const [score, setScore] = useState(null);
@@ -206,7 +207,6 @@ const DragAndDrop = (props) => {
     return (
         <div className="months_parent">
             <div className="header">
-                <a className="back" href="/drag-and-drop-puzzles">←Back</a>
                 <div className="title">
                     <h1>{props.gameName}</h1>
                 </div>
@@ -216,7 +216,7 @@ const DragAndDrop = (props) => {
                 {props.kanji.map((month, index) => (
                     <div
                         key={index}
-                        className={`month ${props.specificClass}` + index}
+                        className={`month ${props.lettersClass} ${props.specificClass}` + index}
                         draggable={true}
                         onDragStart={(e) => handleDragStart(e, month)}
                         onDragOver={handleDragOver}
@@ -226,7 +226,7 @@ const DragAndDrop = (props) => {
                 ))}
             </div>
             <div className="answer_column">
-                {Array.from({ length: props.answersLength }, (_, index) => (
+                {Array.from({ length: props.correctAnswers.length }, (_, index) => (
                     <div
                         key={index}
                         className={!check ? `input_group ${props.specificClass}` : `input_group answers ${props.specificClass}`}
@@ -250,12 +250,9 @@ const DragAndDrop = (props) => {
                 ) : (
                     <button onClick={handleClick}>Check</button>
                 )}
-                {/* {check ? (
-                    <button onClick={() => {navigate('/')}}>Home</button>
-                ) : null} */}
                 <div className="navigate_games">
                     <button onClick={handlePrevious}>Previous</button>
-                    <button className="games_grid_link" onClick={() => {navigate('/word-search-puzzles')}}>
+                    <button className="games_grid_link" onClick={() => {navigate('/drag-and-drop-puzzles')}}>
                         <div className="white_line"></div>
                         <div className="white_line"></div>
                         <div className="white_line"></div>

@@ -10,6 +10,7 @@ const PuzzleGrid = (props) => {
                 const game = props.sortedGames.find(game => game.name === name);
                 const isCompleted = game?.completed;
                 const puzzlePreview = props.puzzlePreviews[index]; 
+                const kanji = props.kanjis[index];
 
                 return (
                     <Link
@@ -18,13 +19,13 @@ const PuzzleGrid = (props) => {
                         to={props.routes[index]}
                     >
                         <div className="preview-container">
-                            {puzzlePreview && (
+                            {puzzlePreview ? (
                                 <img
                                     src={puzzlePreview}
                                     alt={`Preview for Puzzle ${index + 1}`}
                                     className="preview-image"
                                 />
-                            )}
+                            ) : kanji}
                         </div>
                     </Link>
                 );

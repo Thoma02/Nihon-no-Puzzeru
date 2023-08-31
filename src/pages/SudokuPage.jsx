@@ -40,7 +40,14 @@ const SudokuPage = () => {
         "Weather Sudoku 9x9",
         "Animal Sudoku",
         "Numbers Sudoku",
-        "Beginner Kanji 1"
+        "Beginner Kanji 1",
+        "Person Vocab 1",
+        "Person Vocab 2",
+        "Entrance Vocab 1",
+        "Big Vocab 1",
+        "Tree Vocab",
+        "Dog Vocab",
+        "Book Vocab"
     ];
 
     const sortedGames = games.slice().sort((a, b) => {
@@ -55,7 +62,14 @@ const SudokuPage = () => {
         "/sudoku-puzzles/weather-sudoku-9x9",
         "/sudoku-puzzles/animal-sudoku",
         "/sudoku-puzzles/numbers-sudoku",
-        "/sudoku-puzzles/beginner-kanji-1"
+        "/sudoku-puzzles/beginner-kanji-1",
+        "/sudoku-puzzles/person-vocab-1",
+        "/sudoku-puzzles/person-vocab-2",
+        "/sudoku-puzzles/entrance-vocab-1",
+        "/sudoku-puzzles/big-vocab-1",
+        "/sudoku-puzzles/tree-vocab",
+        "/sudoku-puzzles/dog-vocab",
+        "/sudoku-puzzles/book-vocab"
     ];
 
     const puzzlePreviews = [
@@ -65,6 +79,22 @@ const SudokuPage = () => {
         AnimalSudokuPreview
     ];
 
+    const kanjis = [
+        "",
+        "",
+        "",
+        "",
+        "一、二、三、四、五、六、七、八、九",
+        "人, 大、入、犬、本、木",
+        "大人, 男の人, 女の人, 友人, 一人, 人間",
+        "人々, 外国人, 日本人, 隣人, 人口, 二人",
+        "入り口, 入る, 入力, 入れる, 気に入る, 入学",
+        "大きい, 大した, 大きさ, 大切, 大学, 大人しい",
+        "木星, 木材, 木曜日, 木製, 木綿, 苗木",
+        "子犬, 負け犬, 雄犬, 雌犬, 猟犬, 柴犬",
+        "日本, 日本語, 本当, 本当に, 本来, 本気"
+    ]
+
     return (
         <div className="games_parent">
             <Navbar />
@@ -73,6 +103,7 @@ const SudokuPage = () => {
                 sortedGames={sortedGames}
                 routes={routes}
                 puzzlePreviews={puzzlePreviews}
+                kanjis={kanjis}
             />
         </div>
     );
