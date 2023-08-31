@@ -1,7 +1,43 @@
 # Getting Started with Create React App
 
-// "proxy": "http://localhost:4000",
-// set PORT=4000 &&
+This is a MERN project made with MongoDB, Express, React and Node.js.
+It is a language learning application whose purpose is to help with expanding ones is
+vocabulary through playing games. Right now the only option is about
+learning japanese through english but I plan on continuing to work on this application
+in my spare time for quite some time.
+
+This is my frontend folder. It is set up with React, React Router and SCSS.
+Starting with the index.js file. It is wrapped in my AuthContextProvider
+that passes the user state to all components where it is needed.
+
+In my App.js I have set up the routing with React Router. There I have all of my pages.
+
+In the components folder all components are reusable and used multiple times throughout
+my application.
+
+DragAndDrop, Sudoku and WordSearch are the three types of games that I currently have.'
+Each of them is used in at least two games. Each game has a different page, where all the
+specific information for that game gets passed to one of the previously mentioned components.
+There are currently 19 games in the application but I continue to add new ones regularly.
+
+On to the signup and login pages and the authorisation handling. When a user is not logged in
+the app they are still able to play the games but they would get notified, that their
+results won't be saved unless they are a registered user. Upon signing up, a document for
+each of the games containing this exact user is id is created. For that point onwards this
+user is playthrough information would be stored inside the database.
+All the users is information is protected with jsonwebtoken. For the signup validation
+I am using validator and for the password is encryption I am using bcrypt but that is in
+the backend.
+
+The game document stores the information about the game is name, the best score achieved,
+whether the game has been completed (which changes the color of the link to this game
+to indicate that it has been completed), the playthrough information,
+where the information about the time spend playing,
+the score achieved and on which playthrough are stored.
+
+Inside each of the components and hooks and pages there is a lot that can be explained,
+and I am not sure if mentioning all of it on this .txt file makes sense. So please tell
+me if you need any part of the code explained and I will gladly do so.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
