@@ -17,11 +17,15 @@ const sudokuPuzzles = [
 const wordSearchPuzzles = [
     "/word-search-puzzles/everyday-objects",
     "/word-search-puzzles/foods",
+    "/word-search-puzzles/fruits",
+    "/word-search-puzzles/vegetables"
 ]
 
 const dragAndDropPuzzles = [
     "/drag-and-drop-puzzles/months",
     "/drag-and-drop-puzzles/days-week",
+    "/drag-and-drop-puzzles/beginner-kanji-1",
+    "/drag-and-drop-puzzles/person-vocab-1",
 ]
 
 module.exports = {sudokuPuzzles, wordSearchPuzzles, dragAndDropPuzzles}

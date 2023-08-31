@@ -28,6 +28,8 @@ import DogVocab from './pages/SudokuPuzzles/KanjiSystem/Dog';
 import BookVocab from './pages/SudokuPuzzles/KanjiSystem/Book';
 import Fruits from './pages/WordSearchPuzzles/Fruits';
 import Vegetables from './pages/WordSearchPuzzles/Vegetables';
+import BeginnerKanji1DnD from './pages/DragAndDropPuzzles/BeginnerKanjiDnD';
+import PersonVocab1DnD from './pages/DragAndDropPuzzles/PersonKanji1DnD';
 
 function App() {
 
@@ -41,6 +43,8 @@ function App() {
     { path: '/word-search-puzzles', element: <WordSearchPage /> },
     { path: '/drag-and-drop-puzzles', element: <DragAndDropPage /> },
     { path: '/drag-and-drop-puzzles/months', element: <MonthsPage /> },
+    { path: '/drag-and-drop-puzzles/beginner-kanji-1-dnd', element: <BeginnerKanji1DnD /> },
+    { path: '/drag-and-drop-puzzles/person-vocab-1-dnd', element: <PersonVocab1DnD /> },
     { path: '/word-search-puzzles/everyday-objects', element: <EverydayObjectsPage /> },
     { path: '/word-search-puzzles/foods', element: <Foods /> },
     { path: '/word-search-puzzles/fruits', element: <Fruits /> },

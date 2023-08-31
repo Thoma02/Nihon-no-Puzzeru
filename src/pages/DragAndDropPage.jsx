@@ -35,6 +35,8 @@ const DragAndDropPage = () => {
     const desiredOrder = [
         "Months",  
         "Days of the Week", 
+        "Beginner Kanji 1 DnD",
+        "Persn Vocab 1 DnD",
     ];
 
     const sortedGames = games.slice().sort((a, b) => {
@@ -46,6 +48,8 @@ const DragAndDropPage = () => {
     const routes = [
         "/drag-and-drop-puzzles/months", 
         "/drag-and-drop-puzzles/days-week", 
+        "/drag-and-drop-puzzles/beginner-kanji-1-dnd",
+        "/drag-and-drop-puzzles/person-vocab-1-dnd"
     ];
 
     const puzzlePreviews = [
@@ -55,7 +59,9 @@ const DragAndDropPage = () => {
 
     const kanjis = [
         "",
-        ""
+        "",
+        "人, 大、入、犬、本、木",
+        "大人, 男の人, 女の人, 友人, 一人, 人間"
     ]
 
     return (

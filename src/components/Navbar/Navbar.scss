@@ -291,6 +291,12 @@ nav h1 {
     font-weight: 500;
 }
 
+.sudoku_pages.small.home {
+    font-size: 24px;
+    max-width: 160px;
+    border-radius: 20px;
+}
+
 @media screen and (max-width: 640px) {
     nav h1 {
         font-size: 36px;

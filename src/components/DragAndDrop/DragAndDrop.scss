@@ -121,11 +121,20 @@
     height: 270px;
 }
 
+.word_segments.words_6 {
+    position: relative;
+    height: 200px;
+}
+
 .month {
     position: absolute;
     border: 1px solid #000;
     border-radius: 10px;
     padding: 3px;
+}
+
+.month.letters_3 {
+    font-size: 20px;
 }
 
 .month:hover {
@@ -215,6 +224,36 @@
 .day6 {
     left: 80px;
     top: 200px;
+}
+
+.words_60 {
+    left: 80px;
+    top: 60px;
+}
+
+.words_61 {
+    left: 30px;
+    top: 20px;
+}
+
+.words_62 {
+    left: 140px;
+    top: 90px;
+}
+
+.words_63 {
+    left: 200px;
+    top: 130px;
+}
+
+.words_64 {
+    left: 40px;
+    top: 130px;
+}
+
+.words_65 {
+    left: 170px;
+    top: 25px;
 }
 
 .answer_box {
