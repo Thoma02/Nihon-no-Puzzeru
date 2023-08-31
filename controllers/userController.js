@@ -126,6 +126,16 @@ const signupUser = async (req, res) => {
                 completed: false,
                 bestScore: 0
             },
+            {
+                name: "Beginner Kanji 1 DnD",
+                completed: false,
+                bestScore: 0
+            },
+            {
+                name: "Person Vocab 1 DnD",
+                completed: false,
+                bestScore: 0
+            },
         ];
 
         const user_id = user._id;
