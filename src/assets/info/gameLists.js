@@ -24,8 +24,8 @@ const wordSearchPuzzles = [
 const dragAndDropPuzzles = [
     "/drag-and-drop-puzzles/months",
     "/drag-and-drop-puzzles/days-week",
-    "/drag-and-drop-puzzles/beginner-kanji-1",
-    "/drag-and-drop-puzzles/person-vocab-1",
+    "/drag-and-drop-puzzles/beginner-kanji-1-dnd",
+    "/drag-and-drop-puzzles/person-vocab-1-dnd",
 ]
 
 module.exports = {sudokuPuzzles, wordSearchPuzzles, dragAndDropPuzzles}

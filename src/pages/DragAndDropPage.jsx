@@ -6,7 +6,6 @@ import monthsPreview from "../assets/previewImages/months-dnd.svg";
 import daysWeekPreview from "../assets/previewImages/days-week.svg";
 import PuzzleGrid from "../components/PuzzleGrid/PuzzleGrid";
 
-
 const DragAndDropPage = () => {
 
     const [games, setGames] = useState([])
@@ -37,6 +36,8 @@ const DragAndDropPage = () => {
         "Days of the Week", 
         "Beginner Kanji 1 DnD",
         "Persn Vocab 1 DnD",
+        // "Personal Pronouns RU",
+        // "Possessive Pronouns RU"
     ];
 
     const sortedGames = games.slice().sort((a, b) => {
@@ -49,7 +50,9 @@ const DragAndDropPage = () => {
         "/drag-and-drop-puzzles/months", 
         "/drag-and-drop-puzzles/days-week", 
         "/drag-and-drop-puzzles/beginner-kanji-1-dnd",
-        "/drag-and-drop-puzzles/person-vocab-1-dnd"
+        "/drag-and-drop-puzzles/person-vocab-1-dnd",
+        // "/drag-and-drop-puzzles/personal-pronouns-ru",
+        // "/drag-and-drop-puzzles/possessive-pronouns-ru"
     ];
 
     const puzzlePreviews = [
@@ -61,7 +64,9 @@ const DragAndDropPage = () => {
         "",
         "",
         "人, 大、入、犬、本、木",
-        "大人, 男の人, 女の人, 友人, 一人, 人間"
+        "大人, 男の人, 女の人, 友人, 一人, 人間",
+        // "'я', 'ты', 'он', 'она', 'оно', 'мы', 'вы', 'они'",
+        // "мой, моё, моя, мои"
     ]
 
     return (

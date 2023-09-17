@@ -30,6 +30,8 @@ import Fruits from './pages/WordSearchPuzzles/Fruits';
 import Vegetables from './pages/WordSearchPuzzles/Vegetables';
 import BeginnerKanji1DnD from './pages/DragAndDropPuzzles/BeginnerKanjiDnD';
 import PersonVocab1DnD from './pages/DragAndDropPuzzles/PersonKanji1DnD';
+import PersonalPronounsRU from './pages/DragAndDropPuzzles/PersonalPronounsRU';
+import PossessivePronounsRU from './pages/FillSentencePuzzles/PossessivePronounsRU';
 
 function App() {
 
@@ -63,6 +65,8 @@ function App() {
     { path: '/sudoku-puzzles/tree-vocab', element: <TreeVocab /> },
     { path: '/sudoku-puzzles/dog-vocab', element: <DogVocab /> },
     { path: '/sudoku-puzzles/book-vocab', element: <BookVocab /> },
+    { path: '/drag-and-drop-puzzles/personal-pronouns-RU', element: <PersonalPronounsRU /> },
+    { path: '/drag-and-drop-puzzles/possessive-pronouns-RU', element: <PossessivePronounsRU /> }
   ];
 
 

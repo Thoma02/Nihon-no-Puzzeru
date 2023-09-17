@@ -9,6 +9,15 @@
     background-color: #fff;
 }
 
+.fill_sentence_parent {
+    border: 5px solid green;
+    max-width: 600px;
+    margin: 127px auto;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #fff;
+}
+
 .title {
     display: flex;
     gap: 20px;
@@ -110,6 +119,15 @@
     font-size: 28px;
 }
 
+.drag_elements__relative_parent {
+    display: flex;
+    flex-wrap: wrap;
+    // width: 250px;
+    padding: 20px;
+    font-size: 28px;
+    gap: 10px;
+}
+
 .word_segments.month {
     position: relative;
     height: 320px;
@@ -126,11 +144,26 @@
     height: 200px;
 }
 
+.word_segments.words_8 {
+    position: relative;
+    height: 180px;
+}
+
 .month {
     position: absolute;
     border: 1px solid #000;
     border-radius: 10px;
     padding: 3px;
+}
+
+.drag_elements_relative {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+:hover {
+    cursor: pointer;
 }
 
 .month.letters_3 {
@@ -256,6 +289,46 @@
     top: 25px;
 }
 
+.words_80 {
+    left: 100px;
+    top: 70px;
+}
+
+.words_81 {
+    left: 30px;
+    top: 15px;
+}
+
+.words_82 {
+    left: 140px;
+    top: 90px;
+}
+
+.words_83 {
+    left: 200px;
+    top: 130px;
+}
+
+.words_84 {
+    left: 40px;
+    top: 130px;
+}
+
+.words_85 {
+    left: 180px;
+    top: 45px;
+}
+
+.words_86 {
+    left: 120px;
+    top: 20px;
+}
+
+.words_87 {
+    left: 20px;
+    top: 70px;
+}
+
 .answer_box {
     display: flex;
     justify-content: center;
@@ -267,7 +340,16 @@
     padding-top: 4px;
 }
 
+.answer_container {
+    display: flex;
+    gap: 10px;
+}
+
 .answer_box.month {
+    position: relative;
+}
+
+.answer_box.empty {
     position: relative;
 }
 

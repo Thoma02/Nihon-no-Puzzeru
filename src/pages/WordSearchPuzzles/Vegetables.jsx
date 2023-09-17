@@ -8,7 +8,7 @@ const Vegetables = () => {
     const [games, setGames] = useState([]);
     const {user} = useAuthContext();
 
-    const title = "Fruits";
+    const title = "Vegetables";
 
     const letters = [
         ['に', 'ふ', 'か', 'ぼ', 'ち', 'ゃ', 'と', 'た'],
